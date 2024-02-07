@@ -241,11 +241,11 @@ namespace Snake
                 LinkedList<Pos> snake1 = new LinkedList<Pos>(); snake1.AddFirst(new Pos(field.GetSize().Item1 / 2, field.GetSize().Item2 - 1));
                 LinkedList<Pos> snake2 = new LinkedList<Pos>(); snake2.AddFirst(new Pos(field.GetSize().Item1 / 2, 1));
                 Thread inputThread = new Thread(GetKey);
-                Thread moveThreadP1 = new Thread(() => Move(ConsoleColor.Green, snake1, 1));
-                Thread moveThreadP2 = new Thread(() => Move(ConsoleColor.Blue, snake2, 2));
+                Thread moveThreadP1 = new Thread(() => Move(ConsoleColor.Black, snake1, 1));
+                Thread moveThreadP2 = new Thread(() => Move(ConsoleColor.White, snake2, 2));
                 inputThread.Start();
                 moveThreadP1.Start();
-                Thread.Sleep(33);
+                Thread.Sleep(50);
                 moveThreadP2.Start();
                 while (inGame)
                 {
